@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  name: CI
   runs-on: docker
   run-tests:
     steps:
