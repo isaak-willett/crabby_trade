@@ -1,0 +1,17 @@
+name: publish
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-image:
+    runs-on: docker
+    steps:
+      - name: publish image
+        uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
+        run: cargo doc --no-deps --document-private-items
