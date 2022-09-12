@@ -11,4 +11,4 @@ on:
 jobs:
   run-tests:
     steps:
-      - uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
+      - uses: crabby_trade/.github/workflows/build.yml@main
