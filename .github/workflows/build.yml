@@ -46,7 +46,7 @@ jobs:
       -
         name: Build and push dev
         uses: docker/build-push-action@v3
-        if: !${{${steps.extract_branch.outputs.branch} != "main"}}
+        if: False == contains(${steps.extract_branch.outputs.branch}, "main")
         with:
           push: true
           file: Dockerfile.dev
