@@ -7,6 +7,6 @@ run-interactive:
 	@echo "running docker image, interactive"
 	docker run -it crabby_trade /bin/bash
 
-run-tests:
+run-tests: build-docker-image
 	@echo "running tests"
 	docker run -it crabby_trade cargo test

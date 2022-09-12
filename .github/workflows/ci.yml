@@ -11,6 +11,8 @@ on:
 jobs:
   run-tests:
     name: CI
-    runs-on: "docker"
+    runs-on: ubuntu-latest
     steps:
-      - uses: crabby_trade/.github/workflows/build.yml@main
+      - 
+        name: run tests
+        run: Make run-tests
