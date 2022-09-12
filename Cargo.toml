@@ -4,9 +4,8 @@ version = "0.1.0"
 edition = "2021"
 description = "A rust based trading platform"
 license = "Apache-2.0"
-license-file = "LICENSE"
-authors = isaak-willett
-readme = README
-repository = https://github.com/isaak-willett/crabby_trade
+authors = ["isaak-willett"]
+readme = "README.rst"
+repository = "https://github.com/isaak-willett/crabby_trade"
 
 [dependencies]

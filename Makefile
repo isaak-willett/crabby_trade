@@ -18,7 +18,11 @@ run-interactive: build-docker-image
 	@echo "running docker image, interactive"
 	docker run -v $(realpath .):/crab_trade -it crabby_trade:${version} /bin/bash
 
-run-tests: build-docker-image
+run-clippy: build-docker-image
+	@echo "running clippy"
+	docker run -v $(realpath .):/crab_trade crabby_trade:${version} cargo clippy
+
+run-tests: run-clippy
 	@echo "running tests"
 	docker run -v $(realpath .):/crab_trade crabby_trade:${version} cargo test
 

@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  # runs the tests and the linters (clippy)
   run-tests:
     name: CI
     runs-on: ubuntu-latest
