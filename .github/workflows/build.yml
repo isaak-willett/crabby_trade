@@ -51,4 +51,4 @@ jobs:
         with:
           push: true
           file: Dockerfile.dev
-          tags: willettisaak/crabby_trade:${{steps.read_file.outputs.contents}}.$BUILD_NUMBER
+          tags: willettisaak/crabby_trade:${{steps.read_file.outputs.contents}}.${{env.BUILD_NUMBER}}
