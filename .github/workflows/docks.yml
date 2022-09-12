@@ -10,7 +10,7 @@ on:
 
 jobs:
   build docs:
-    name: CI
+    name: build docs
     runs-on: docker
     steps:
       - uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
