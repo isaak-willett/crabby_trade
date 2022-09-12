@@ -26,6 +26,6 @@ run-tests: run-clippy
 	@echo "running tests"
 	docker run -v $(realpath .):/crab_trade crabby_trade:${version} cargo test
 
-publish_crate: build-cargo-package run-tests
+publish_crate: build-cargo-package
 	@echo "publishing crate"
 	docker run -v ${realpath .}:/crab_trade crabby_trade cargo:${version} publish --token ${CARGO_API_KEY} --allow-dirty
