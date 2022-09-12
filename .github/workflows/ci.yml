@@ -14,5 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - 
+        name: get build essentials
+        run: sudo apt-get install build-essential
+      - 
         name: run tests
         run: Make run-tests
