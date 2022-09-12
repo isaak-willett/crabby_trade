@@ -2,8 +2,6 @@ name: ci
 
 on:
   push:
-  pull_request:
-    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,10 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - 
-        name: get build essentials
-        run: |
-          sudo apt-get update 
-          sudo apt-get install build-essential
-      - 
         name: run tests
-        run: Make run-tests
+        run: make run-tests
