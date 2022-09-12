@@ -10,4 +10,6 @@ on:
 
 jobs:
   run-tests:
-    uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
+    steps:
+      - name: "grab image"
+        uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
