@@ -25,6 +25,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - 
+        name: Generate build number
+        uses: einaregilsson/build-number@v3
+        with:
+          token: ${{secrets.github_token}} 
+
+      - 
         name: Read file contents
         id: read_file
         uses: andstor/file-reader-action@v1
@@ -38,19 +44,10 @@ jobs:
         id: extract_branch
 
       -
-        name: Build and push main
-        uses: docker/build-push-action@v3
-        if: ${{steps.extract_branch.outputs.branch}}
-        with:
-          push: true
-          file: Dockerfile.dev
-          tags: willettisaak/crabby_trade:${{steps.read_file.outputs.contents}}
-
-      -
-        name: Build and push main
+        name: Build and push dev
         uses: docker/build-push-action@v3
         if: ${{steps.extract_branch.outputs.branch != "main"}}
         with:
           push: true
           file: Dockerfile.dev
-          tags: willettisaak/crabby_trade:latest
+          tags: willettisaak/crabby_trade:${steps.read_file.outputs.contents}.$BUILD_NUMBER
