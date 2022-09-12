@@ -12,7 +12,7 @@ build-cargo-package: build-docker-image
 
 build-docs: build-docker-image
 	@echo "building docs"
-	docker run -v $(realpath .):/crab_trade crabby_trade cargo doc --no-deps --document-private-items
+	docker run -v $(realpath .):/crab_trade crabby_trade cargo:${version} doc --no-deps --document-private-items
 
 run-interactive: build-docker-image
 	@echo "running docker image, interactive"

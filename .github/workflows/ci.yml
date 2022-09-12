@@ -15,11 +15,5 @@ jobs:
         name: Check out repo
         uses: actions/checkout@v3
       - 
-        name: Read file contents
-        id: read_file
-        uses: andstor/file-reader-action@v1
-        with:
-          path: "VERSION"
-      - 
         name: run tests
         run: make run-tests

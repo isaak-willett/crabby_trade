@@ -40,7 +40,7 @@ jobs:
       -
         name: Build and push main
         uses: docker/build-push-action@v3
-        if: ${{steps.extract_branch.outputs.branch != main}}
+        if: ${{steps.extract_branch.outputs.branch}}
         with:
           push: true
           file: Dockerfile.dev
@@ -49,7 +49,7 @@ jobs:
       -
         name: Build and push main
         uses: docker/build-push-action@v3
-        if: ${{steps.extract_branch.outputs.branch == main}}
+        if: ${{steps.extract_branch.outputs.branch != "main"}}
         with:
           push: true
           file: Dockerfile.dev
