@@ -41,7 +41,7 @@ jobs:
         name: Extract branch name
         shell: bash
         run: |
-          echo ${{steps.buildnumber.outputs.build_number}}
+          echo $BUILD_NUMBER
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
