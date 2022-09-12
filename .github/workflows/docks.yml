@@ -9,5 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-tests:
-    uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
+  build docs:
+    name: CI
+    runs-on: docker
+    steps:
+      - uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
