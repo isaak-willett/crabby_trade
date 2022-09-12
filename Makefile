@@ -9,4 +9,4 @@ run-interactive:
 
 run-tests: build-docker-image
 	@echo "running tests"
-	docker run -it crabby_trade cargo test
+	docker run crabby_trade cargo test
