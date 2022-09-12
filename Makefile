@@ -16,12 +16,12 @@ build-docs: build-docker-image
 
 run-interactive: build-docker-image
 	@echo "running docker image, interactive"
-	docker run -v $(realpath .):/crab_trade -it crabby_trade /bin/bash
+	docker run -v $(realpath .):/crab_trade -it crabby_trade:${version} /bin/bash
 
 run-tests: build-docker-image
 	@echo "running tests"
-	docker run -v $(realpath .):/crab_trade crabby_trade cargo test
+	docker run -v $(realpath .):/crab_trade crabby_trade:${version} cargo test
 
 publish_crate: build-cargo-package run-tests
 	@echo "publishing crate"
-	docker run -v ${realpath .}:/crab_trade crabby_trade cargo publish --token ${CARGO_API_KEY} --allow-dirty
+	docker run -v ${realpath .}:/crab_trade crabby_trade cargo:${version} publish --token ${CARGO_API_KEY} --allow-dirty
