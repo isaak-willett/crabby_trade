@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  runs-on: docker
   run-tests:
     steps:
       - uses: crabby_trade/.github/workflows/build.yml@main
