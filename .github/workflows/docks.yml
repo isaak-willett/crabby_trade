@@ -11,6 +11,3 @@ on:
 jobs:
   run-tests:
     uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
-    steps:
-      - name: build docks
-        run: cargo doc --no-deps --document-private-items

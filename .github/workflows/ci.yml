@@ -11,6 +11,3 @@ on:
 jobs:
   run-tests:
     uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
-    steps:
-      - name: run tests
-        run: make run-tests

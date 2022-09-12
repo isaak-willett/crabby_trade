@@ -11,6 +11,3 @@ on:
 jobs:
   build-image:
     uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
-    steps:
-      - name: get docker image
-      - run: echo "here"
