@@ -10,10 +10,7 @@ on:
 
 jobs:
   run-tests:
-    runs-on: docker
+    uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
     steps:
-      - name: get docker image
-        uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
-
       - name: build docks
         run: cargo doc --no-deps --document-private-items
