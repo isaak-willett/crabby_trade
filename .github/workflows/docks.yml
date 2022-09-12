@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build docs:
+  build-docs:
     name: build docs
     runs-on: docker
     steps:
-      - uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
+      - uses: crabby_trade/.github/workflows/build.yml@main

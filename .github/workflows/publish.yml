@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish image:
+  publish-image:
     name: publish image
     runs-on: docker
     steps:
-      - uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
+      - uses: crabby_trade/.github/workflows/build.yml@main
