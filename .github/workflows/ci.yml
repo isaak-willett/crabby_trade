@@ -13,7 +13,7 @@ jobs:
     runs-on: rust
     steps:
       - name: checkout
-        uses: checkout@v3
+        uses: actions/checkout@v3
 
       - name: run tests
         run: cargo test
