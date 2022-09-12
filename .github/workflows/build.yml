@@ -8,6 +8,7 @@ on:
 
 jobs:
   build-image:
+    name: build iamge
     runs-on: docker
     steps:
       - name: checkout

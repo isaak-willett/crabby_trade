@@ -11,6 +11,6 @@ on:
 jobs:
   publish-image:
     name: publish image
-    runs-on: docker
+    runs-on: "docker"
     steps:
       - uses: crabby_trade/.github/workflows/build.yml@main
