@@ -12,6 +12,5 @@ jobs:
   build-image:
     runs-on: docker
     steps:
-      - name: publish image
+      - name: get docker image
         uses: crabby_trade/crabby_trade/.github/workflows/build.yml@main
-        run: cargo doc --no-deps --document-private-items
