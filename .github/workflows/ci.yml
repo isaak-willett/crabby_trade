@@ -15,7 +15,9 @@ jobs:
     steps:
       - 
         name: get build essentials
-        run: sudo apt-get install build-essential
+        run: |
+          apt-get update 
+          apt-get install build-essential
       - 
         name: run tests
         run: Make run-tests
