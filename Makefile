@@ -28,4 +28,4 @@ run-tests: run-clippy
 
 publish-crate: build-cargo-package
 	@echo "publishing crate"
-	docker run -v ${realpath .}:/crab_trade crabby_trade:{version} cargo publish --token ${CARGO_API_KEY} --allow-dirty
+	docker run -v ${realpath .}:/crab_trade crabby_trade:${version} cargo publish --token ${CARGO_API_KEY} --allow-dirty
