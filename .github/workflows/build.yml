@@ -95,6 +95,7 @@ jobs:
         name: Build and push dev
         if: false == contains(${{steps.extract_branch.outputs.branch}}, "main")
         run: |
+          echo "Building and pushing to dev"
           rm VERSION
           echo "${{steps.read_file.outputs.contents}}.${{env.BUILD_NUMBER}}" >> VERSION
           echo "${{steps.read_file.outputs.contents}}.${{env.BUILD_NUMBER}}"
