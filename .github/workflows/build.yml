@@ -97,6 +97,7 @@ jobs:
         run: |
           rm VERSION
           echo "${{steps.read_file.outputs.contents}}.${{env.BUILD_NUMBER}}" >> VERSION
+          echo "${{steps.read_file.outputs.contents}}.${{env.BUILD_NUMBER}}"
           make publish-crate
 
       -
