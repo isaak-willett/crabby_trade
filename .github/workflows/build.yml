@@ -4,6 +4,9 @@ on:
   push:
     branches:
 
+env:
+  CARGO_API_KEY: ${{secrets.CARGO_API_KEY}}
+
 jobs:
   docker:
     runs-on: ubuntu-latest
