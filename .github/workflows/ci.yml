@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  push:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # runs the tests and the linters (clippy)
+  run-tests:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Check out repo
+        uses: actions/checkout@v3
+      - 
+        name: run tests
+        run: make run-tests

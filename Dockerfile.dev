@@ -1,0 +1,9 @@
+FROM rust:1.63
+SHELL ["/bin/bash", "-c"]
+WORKDIR /crab_trade
+
+COPY . /crab_trade
+
+# install the basic linters
+RUN rustup update
+RUN rustup component add clippy

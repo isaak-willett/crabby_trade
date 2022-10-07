@@ -1,0 +1,11 @@
+[package]
+name = "crab_trade"
+version = "0.2.0"
+edition = "2021"
+description = "A rust based trading platform"
+license = "Apache-2.0"
+authors = ["isaak-willett"]
+readme = "README.rst"
+repository = "https://github.com/isaak-willett/crabby_trade"
+
+[dependencies]
