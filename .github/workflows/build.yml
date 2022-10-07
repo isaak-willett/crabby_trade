@@ -95,5 +95,5 @@ jobs:
         name: Build and push main
         if: true == contains(${{steps.extract_branch.outputs.branch}}, "main")
         run: |
-          docker run -v ${realpath .}:/crab_trade crabby_trade cargo:${{steps.read_file.outputs.contents}} publish --token ${{secrets.CARGO_API_KEY}} --allow-dirty
+          docker run -v $(realpath .):/crab_trade crabby_trade cargo:${{steps.read_file.outputs.contents}} publish --token ${{secrets.CARGO_API_KEY}} --allow-dirty
 
