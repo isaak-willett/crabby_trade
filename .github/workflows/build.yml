@@ -92,15 +92,6 @@ jobs:
         id: extract_branch
 
       -
-        name: Build and push dev
-        if: false == contains(${{steps.extract_branch.outputs.branch}}, "main")
-        run: |
-          echo "Building and pushing to dev"
-          rm VERSION
-          echo "${{steps.read_file.outputs.contents}}${{env.BUILD_NUMBER}}" >> VERSION
-          make publish-crate
-
-      -
         name: Build and push main
         if: true == contains(${{steps.extract_branch.outputs.branch}}, "main")
         run: |
