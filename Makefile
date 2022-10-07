@@ -1,5 +1,5 @@
 
-version := $(shell cat VERSION)
+version := ${shell cat VERSION}
 
 build-docker-image:
 	@echo "building docker image"
