@@ -3,7 +3,7 @@ name: build and publish docker image and crate
 on:
   push:
     branches:
-      - main
+      - *
 
 env:
   CARGO_API_KEY: ${{secrets.CARGO_API_KEY}}
@@ -29,6 +29,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - 
+        name: Generate build number
+        uses: einaregilsson/build-number@v3
+        with:
+          token: ${{secrets.github_token}} 
+
+      - 
         name: Read file contents
         id: read_file
         uses: andstor/file-reader-action@v1
@@ -36,15 +42,9 @@ jobs:
           path: "VERSION"
 
       -
-        name: Build docker image and push main
+        name: Build docker image and push dev
         uses: docker/build-push-action@v3
         with:
           push: true
           file: Dockerfile.dev
-          tags: willettisaak/crabby_trade:${{steps.read_file.outputs.contents}}
-
-      -
-        name: Build cargo crate and push main
-        run: |
-          docker run -v $(realpath .):/crab_trade crabby_trade:${{steps.read_file.outputs.contents}} cargo publish --token ${{secrets.CARGO_API_KEY}} --allow-dirty
-
+          tags: willettisaak/crabby_trade:${{steps.read_file.outputs.contents}}.${{env.BUILD_NUMBER}}
